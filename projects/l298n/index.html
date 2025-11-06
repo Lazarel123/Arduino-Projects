@@ -11,10 +11,8 @@
       
       
       
-        <link rel="prev" href="../..">
+        <link rel="prev" href="../infrared/">
       
-      
-        <link rel="next" href="../led/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +20,7 @@
     
     
       
-        <title>Servo Motor - Arduino Projects</title>
+        <title>L298N - Arduino Projects</title>
       
     
     
@@ -64,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#servo-motor" class="md-skip">
+        <a href="#arduino-dual-motor-control-with-l298n-driver" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Servo Motor
+              L298N
             
           </span>
         </div>
@@ -279,32 +277,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Servo Motor
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../servo/" class="md-nav__link">
         
   
   
@@ -315,62 +291,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-basic-concept" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Basic Concept
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-working-principle" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Working Principle
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-main-components" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Main Components
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-code" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example Code:
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -426,10 +346,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../l298n/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    L298N
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -440,6 +380,51 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#arduino-dual-motor-control-with-l298n-driver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arduino Dual Motor Control with L298N Driver
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-basic-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Basic Concept
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-working-principle" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Working Principle
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -469,14 +454,21 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#arduino-dual-motor-control-with-l298n-driver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arduino Dual Motor Control with L298N Driver
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#1-basic-concept" class="md-nav__link">
@@ -491,24 +483,6 @@
   <a href="#2-working-principle" class="md-nav__link">
     <span class="md-ellipsis">
       2. Working Principle
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-main-components" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Main Components
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-code" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example Code:
     </span>
   </a>
   
@@ -533,22 +507,24 @@
   
 
 
-<h1 id="servo-motor">Servo Motor</h1>
-<p>A <strong>servo motor</strong> is a type of motor designed for precise control of angular or linear position, velocity, and acceleration. It operates as part of a closed-loop control system that constantly monitors and adjusts its motion to achieve accurate positioning.</p>
+  <h1>L298N</h1>
+
+<h2 id="arduino-dual-motor-control-with-l298n-driver">Arduino Dual Motor Control with L298N Driver</h2>
+<p>This project demonstrates how to control two DC motors using an L298N motor driver and an Arduino.
+With this setup, you can make your motors move forward, backward, and stop, as well as control their speed using PWM (Pulse Width Modulation).</p>
 <h2 id="1-basic-concept">1. Basic Concept</h2>
-<p>A servo motor system consists of:
-A motor <strong>(DC or AC)</strong>
-A feedback device <strong>(encoder or potentiometer)</strong>
-A control circuit <strong>(servo controller or driver)</strong>
-The feedback device continuously measures the motor’s position, and the control circuit adjusts the motor’s movement to match the desired value.</p>
+<p><strong>The L298N Motor Driver</strong> is an integrated circuit that allows Arduino to control the direction and speed of DC motors.
+Since Arduino pins cannot supply enough current to drive motors directly, the <strong>L298N</strong> acts as an interface — it amplifies control signals from the Arduino and provides sufficient current and voltage to the motors.</p>
 <h2 id="2-working-principle">2. Working Principle</h2>
-<p>An input signal specifies the desired position.
-The controller compares this input with the feedback signal from the sensor.
-The error signal <strong>(difference between desired and actual position)</strong> is generated.
-The controller drives the motor to correct the error.
-The motor stops when the error reaches zero.
-This process is called <strong>closed-loop control</strong>, as it constantly checks and corrects the position.</p>
-<h2 id="3-main-components">3. Main Components</h2>
+<p>The L298N has two <strong>H-Bridge</strong> circuits, which allow independent control of two motors <strong>(A and B).</strong></p>
+<p>Each motor has:</p>
+<p>Two direction control pins <strong>(IN1, IN2 for Motor A and IN3, IN4 for Motor B).</strong></p>
+<p>One enable pin <strong>(ENA for Motor A and ENB for Motor B)</strong> that controls speed using <strong>PWM (analogWrite).</strong></p>
+<p>By sending <strong>HIGH</strong> or <strong>LOW</strong> signals to the direction pins, you can make the motor rotate:</p>
+<p><strong>Forward</strong></p>
+<p><strong>Backward</strong></p>
+<p><strong>Stop</strong></p>
+<p>The speed is controlled by changing the PWM value <strong>(0–255)</strong> on the enable pins.</p>
 <table>
 <thead>
 <tr>
@@ -558,48 +534,145 @@ This process is called <strong>closed-loop control</strong>, as it constantly ch
 </thead>
 <tbody>
 <tr>
-<td><strong>Motor</strong></td>
-<td>Provides the mechanical motion.</td>
+<td><strong>Arduino Board</strong></td>
+<td>Sends control signals (PWM and logic) to the L298N driver.</td>
 </tr>
 <tr>
-<td><strong>Gearbox</strong></td>
-<td>Reduces speed and increases torque.</td>
+<td><strong>L298N Motor Driver</strong></td>
+<td>Controls the speed and direction of two DC motors.</td>
 </tr>
 <tr>
-<td><strong>Feedback Sensor</strong></td>
-<td>Measures shaft position and provides feedback.</td>
+<td><strong>DC Motors (x2)</strong></td>
+<td>Convert electrical energy into motion.</td>
 </tr>
 <tr>
-<td><strong>Control Circuit</strong></td>
-<td>Compares input and feedback signals and drives the motor accordingly.</td>
+<td><strong>External Power Supply (e.g., 9V–12V)</strong></td>
+<td>Provides sufficient current for the motors.</td>
+</tr>
+<tr>
+<td><strong>Jumper Wires</strong></td>
+<td>Connects Arduino to the L298N module.</td>
+</tr>
+<tr>
+<td><strong>Breadboard (optional)</strong></td>
+<td>Helps with clean and easy wiring.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="example-code">Example Code:</h2>
-<div class="codehilite"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Servo.h&gt;</span><span class="c1">  // Include Servo library</span>
+<table>
+<thead>
+<tr>
+<th>L298N Pin</th>
+<th>Arduino Pin</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ENA</strong></td>
+<td>D3</td>
+<td>PWM pin for Motor A speed control</td>
+</tr>
+<tr>
+<td><strong>IN1</strong></td>
+<td>D8</td>
+<td>Direction control 1 for Motor A</td>
+</tr>
+<tr>
+<td><strong>IN2</strong></td>
+<td>D7</td>
+<td>Direction control 2 for Motor A</td>
+</tr>
+<tr>
+<td><strong>ENB</strong></td>
+<td>D4</td>
+<td>PWM pin for Motor B speed control</td>
+</tr>
+<tr>
+<td><strong>IN3</strong></td>
+<td>D6</td>
+<td>Direction control 1 for Motor B</td>
+</tr>
+<tr>
+<td><strong>IN4</strong></td>
+<td>D5</td>
+<td>Direction control 2 for Motor B</td>
+</tr>
+<tr>
+<td><strong>+12V</strong></td>
+<td>External Power (+)</td>
+<td>Power supply for motors (9–12V recommended)</td>
+</tr>
+<tr>
+<td><strong>GND</strong></td>
+<td>Arduino GND</td>
+<td>Common ground connection</td>
+</tr>
+<tr>
+<td><strong>5V (optional)</strong></td>
+<td>Arduino 5V</td>
+<td>Power for logic (if jumper is installed on the L298N board)</td>
+</tr>
+</tbody>
+</table>
+<div class="codehilite"><pre><span></span><code><span class="c1">// Motor A: left motor</span>
+<span class="c1">// Motor B: right motor</span>
 
-<span class="n">Servo</span><span class="w"> </span><span class="n">myServo</span><span class="p">;</span><span class="w">      </span><span class="c1">// Create Servo object</span>
+<span class="cp">#define ENA 3  </span><span class="c1">// PWM pin for motor A speed control</span>
+<span class="cp">#define IN1 8  </span><span class="c1">// Direction pin 1 for motor A</span>
+<span class="cp">#define IN2 7  </span><span class="c1">// Direction pin 2 for motor A</span>
+<span class="cp">#define ENB 4  </span><span class="c1">// PWM pin for motor B speed control</span>
+<span class="cp">#define IN3 6  </span><span class="c1">// Direction pin 1 for motor B</span>
+<span class="cp">#define IN4 5  </span><span class="c1">// Direction pin 2 for motor B</span>
 
 <span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">myServo</span><span class="p">.</span><span class="n">attach</span><span class="p">(</span><span class="mi">9</span><span class="p">);</span><span class="w">  </span><span class="c1">// Attach servo signal to pin 9</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">ENA</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"> </span><span class="c1">// Set ENA as output (speed control)</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">IN1</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"> </span><span class="c1">// Set IN1 as output (motor A direction)</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">IN2</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"> </span><span class="c1">// Set IN2 as output (motor A direction)</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">ENB</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"> </span><span class="c1">// Set ENB as output (speed control)</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">IN3</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"> </span><span class="c1">// Set IN3 as output (motor B direction)</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">IN4</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"> </span><span class="c1">// Set IN4 as output (motor B direction)</span>
 <span class="p">}</span>
 
 <span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">myServo</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w">    </span><span class="c1">// Move to 0 degrees</span>
-<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w">         </span><span class="c1">// Wait 1 second</span>
+<span class="w">  </span><span class="n">forward</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span><span class="w">   </span><span class="c1">// Move both motors forward at speed 200</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span><span class="w">    </span><span class="c1">// Wait 2 seconds</span>
 
-<span class="w">  </span><span class="n">myServo</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mi">90</span><span class="p">);</span><span class="w">   </span><span class="c1">// Move to 90 degrees</span>
-<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w">         </span><span class="c1">// Wait 1 second</span>
+<span class="w">  </span><span class="n">backward</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span><span class="w">  </span><span class="c1">// Move both motors backward at speed 200</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span><span class="w">    </span><span class="c1">// Wait 2 seconds</span>
 
-<span class="w">  </span><span class="n">myServo</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mi">180</span><span class="p">);</span><span class="w">  </span><span class="c1">// Move to 180 degrees</span>
-<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w">         </span><span class="c1">// Wait 1 second</span>
+<span class="w">  </span><span class="n">stopMotors</span><span class="p">();</span><span class="w">   </span><span class="c1">// Stop both motors</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span><span class="w">    </span><span class="c1">// Wait 2 seconds</span>
+<span class="p">}</span>
 
-<span class="w">  </span><span class="n">myServo</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mi">90</span><span class="p">);</span><span class="w">   </span><span class="c1">// Return to 90 degrees</span>
-<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w">         </span><span class="c1">// Wait 1 second</span>
+<span class="c1">// --- Movement functions ---</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">speed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN1</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w"> </span><span class="c1">// Motor A forward</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN2</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN3</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w"> </span><span class="c1">// Motor B forward</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN4</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<span class="w">  </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">ENA</span><span class="p">,</span><span class="w"> </span><span class="n">speed</span><span class="p">);</span><span class="w"> </span><span class="c1">// Set motor A speed</span>
+<span class="w">  </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">ENB</span><span class="p">,</span><span class="w"> </span><span class="n">speed</span><span class="p">);</span><span class="w"> </span><span class="c1">// Set motor B speed</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">backward</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">speed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN1</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w">  </span><span class="c1">// Motor A backward</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN2</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN3</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w">  </span><span class="c1">// Motor B backward</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN4</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span>
+<span class="w">  </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">ENA</span><span class="p">,</span><span class="w"> </span><span class="n">speed</span><span class="p">);</span><span class="w"> </span><span class="c1">// Set motor A speed</span>
+<span class="w">  </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">ENB</span><span class="p">,</span><span class="w"> </span><span class="n">speed</span><span class="p">);</span><span class="w"> </span><span class="c1">// Set motor B speed</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">stopMotors</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN1</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN2</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN3</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN4</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
+<span class="w">  </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">ENA</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// Stop motor A</span>
+<span class="w">  </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">ENB</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// Stop motor B</span>
 <span class="p">}</span>
 </code></pre></div>
-
-<p><strong>Made by:</strong>  Lazarel Goga  <a href="https://github.com/Lazarel123">GitHub</a> </p>
 
 
 
