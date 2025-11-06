@@ -20,7 +20,7 @@
     
     
       
-        <title>Infrared+Led - Arduino Projects</title>
+        <title>Infrared Led - Arduino Projects</title>
       
     
     
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Infrared+Led
+              Infrared Led
             
           </span>
         </div>
@@ -340,7 +340,7 @@
   
   
   <span class="md-ellipsis">
-    Infrared+Led
+    Infrared Led
     
   </span>
   
@@ -353,7 +353,7 @@
   
   
   <span class="md-ellipsis">
-    Infrared+Led
+    Infrared Led
     
   </span>
   
@@ -482,37 +482,101 @@ When an object is detected, the sensor’s <strong>digital output</strong> chang
 <p>The IR sensor outputs a <strong>HIGH (1)</strong> or <strong>LOW (0)</strong> signal based on whether it detects an object.</p>
 <p><strong>HIGH (1): Object detected</strong></p>
 <p><strong>LOW (0): No object detected</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="n">The</span><span class="w"> </span><span class="n">Arduino</span><span class="w"> </span><span class="n">reads</span><span class="w"> </span><span class="k">this</span><span class="w"> </span><span class="n">signal</span><span class="w"> </span><span class="k">using</span><span class="w"> </span><span class="n">digitalRead</span><span class="p">().</span>
-
-<span class="n">When</span><span class="w"> </span><span class="n">detection</span><span class="w"> </span><span class="n">occurs</span><span class="p">,</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">Arduino</span><span class="w"> </span><span class="n">turns</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">LED</span><span class="w"> </span><span class="o">**</span><span class="n">ON</span><span class="o">**</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="n">seconds</span><span class="p">,</span><span class="w"> </span><span class="n">then</span><span class="w"> </span><span class="n">turns</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">**</span><span class="n">OFF</span><span class="o">**</span><span class="p">.</span>
-
-<span class="n">The</span><span class="w"> </span><span class="n">Serial</span><span class="w"> </span><span class="n">Monitor</span><span class="w"> </span><span class="n">shows</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">live</span><span class="w"> </span><span class="n">sensor</span><span class="w"> </span><span class="n">readings</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="o">**</span><span class="n">real</span><span class="w"> </span><span class="n">time</span><span class="p">.</span><span class="o">**</span>
-<span class="c1">// --- Përkufizimi i pineve ---</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">infrared</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span><span class="w">   </span><span class="c1">// Sensori infra të kuq lidhur në pinin digjital 6</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">LED</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">        </span><span class="c1">// LED lidhur në pinin digjital 5</span>
-
-<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w">     </span><span class="c1">// Vendos pinin e LED-it si dalje</span>
-<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">infrared</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="p">);</span><span class="w"> </span><span class="c1">// Vendos pinin e sensorit si hyrje</span>
-<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span><span class="w">       </span><span class="c1">// Nis Serial Monitor për shfaqjen e të dhënave</span>
-<span class="p">}</span>
-
-<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">infrared</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">digitalRead</span><span class="p">(</span><span class="n">infrared</span><span class="p">);</span><span class="w"> </span><span class="c1">// Lexon vlerën digjitale nga sensori (0 ose 1)</span>
-<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">infrared</span><span class="p">);</span><span class="w">             </span><span class="c1">// Printon vlerën në Serial Monitor</span>
-
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">infrared</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                  </span>
-<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w">      </span><span class="c1">// Ndez LED-in</span>
-<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span><span class="w">                   </span><span class="c1">// Mbaj LED-in ndezur 0.5 sekonda</span>
-<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w">       </span><span class="c1">// Fik LED-in</span>
-<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span><span class="w">                   </span>
-<span class="w">  </span><span class="p">}</span><span class="w"> </span>
-<span class="w">  </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">                         </span>
-<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
-<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w">                  </span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+<p>The Arduino reads this signal using digitalRead().</p>
+<p>When detection occurs, the Arduino turns the LED <strong>ON</strong> for 0.5 seconds, then turns it <strong>OFF</strong>.</p>
+<p>The Serial Monitor shows the live sensor readings in <strong>real time.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Arduino Board</strong></td>
+<td>Processes the sensor input and controls the LED output.</td>
+</tr>
+<tr>
+<td><strong>Infrared Sensor</strong></td>
+<td>Detects objects using infrared reflection.</td>
+</tr>
+<tr>
+<td><strong>LED</strong></td>
+<td>Lights up when an object is detected.</td>
+</tr>
+<tr>
+<td><strong>Resistor</strong></td>
+<td>Limits current to protect the LED (typically 220Ω–330Ω).</td>
+</tr>
+<tr>
+<td><strong>Jumper Wires</strong></td>
+<td>Connects components to the Arduino pins.</td>
+</tr>
+<tr>
+<td><strong>Breadboard</strong></td>
+<td>Makes circuit assembly simple and clean.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Arduino Pin</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Infrared Sensor OUT</strong></td>
+<td>D6</td>
+<td>Sensor digital output signal</td>
+</tr>
+<tr>
+<td><strong>LED (Anode)</strong></td>
+<td>D5</td>
+<td>LED control pin</td>
+</tr>
+<tr>
+<td><strong>LED (Cathode)</strong></td>
+<td>GND</td>
+<td>Ground connection</td>
+</tr>
+<tr>
+<td><strong>Sensor VCC</strong></td>
+<td>5V</td>
+<td>Power supply</td>
+</tr>
+<tr>
+<td><strong>Sensor GND</strong></td>
+<td>GND</td>
+<td>Common ground</td>
+</tr>
+</tbody>
+</table>
+<p>// --- Pin Definitions ---
+int infrared = 6;   // Infrared sensor connected to digital pin 6
+int LED = 5;        // LED connected to digital pin 5</p>
+<p>void setup() {
+  pinMode(LED, OUTPUT);     // Set the LED pin as output
+  pinMode(infrared, INPUT); // Set the infrared sensor pin as input
+  Serial.begin(9600);       // Start Serial Monitor to display data
+}</p>
+<p>void loop() {
+  int sensorValue = digitalRead(infrared); // Read the digital value from the sensor (0 or 1)
+  Serial.println(sensorValue);             // Print the value to the Serial Monitor</p>
+<p>if (sensorValue == 1) {                <br />
+    digitalWrite(LED, HIGH);      // Turn the LED on
+    delay(500);                   // Keep the LED on for 0.5 seconds
+    digitalWrite(LED, LOW);       // Turn the LED off
+    delay(500);                 <br />
+  } 
+  else {                       <br />
+    digitalWrite(LED, LOW);       // Keep the LED off when no object is detected
+    delay(100);                <br />
+  }
+}</p>
 
 
 
