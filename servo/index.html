@@ -18,7 +18,7 @@
     
     
       
-        <title>Servo - Arduino Projects</title>
+        <title>Servo Motor Control - Arduino Projects</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#include-perfshijme-librarine-servo-per-te-kontrolluar-motoret-servo" class="md-skip">
+        <a href="#servo-motor-control" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Servo
+              Servo Motor Control
             
           </span>
         </div>
@@ -319,6 +319,32 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Components
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -336,9 +362,19 @@
   
 
 
-<p>Servo Motor Code</p>
+<h1 id="servo-motor-control">Servo Motor Control</h1>
+<p>This Arduino sketch controls a servo motor by rotating it to 0°, 90°, and 180° positions in a loop.  </p>
+<hr />
+<h2 id="components">Components</h2>
+<ul>
+<li>Arduino Uno</li>
+<li>SG90 Servo Motor</li>
+<li>Jumper Wires</li>
+</ul>
+<hr />
+<h2 id="code">Code</h2>
 <p>```cpp</p>
-<h1 id="include-perfshijme-librarine-servo-per-te-kontrolluar-motoret-servo">include <Servo.h>  //Përfshijmë librarinë Servo për të kontrolluar motorët servo</h1>
+<h1 id="include-perfshijme-librarine-servo-per-te-kontrolluar-motoret-servo">include <Servo.h>  // Përfshijmë librarinë Servo për të kontrolluar motorët servo</h1>
 <p>Servo myServo;      // Krijojmë një objekt të tipit Servo me emrin "myServo"</p>
 <p>void setup() {
   myServo.attach(9);  // Lidhim servon me pinin 9 të Arduinos (ky është pini i sinjalit të servo-s)
