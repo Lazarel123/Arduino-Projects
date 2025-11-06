@@ -61,11 +61,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#servo-motor-explanation" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -287,19 +282,6 @@
       
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Servo Motor
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -311,32 +293,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#servo-motor-explanation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Servo Motor Explanation
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -368,23 +324,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#servo-motor-explanation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Servo Motor Explanation
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -404,25 +343,24 @@
 
   <h1>Servo Motor</h1>
 
-<h2 id="servo-motor-explanation">Servo Motor Explanation</h2>
 <p>A servo motor is a type of motor designed for precise control of angular or linear position, velocity, and acceleration. It operates as part of a closed-loop control system that constantly monitors and adjusts its motion to achieve accurate positioning.</p>
 <ol>
 <li>Basic Concept</li>
 </ol>
-<p>A servo motor system consists of:</p>
-<p>A motor (DC or AC)</p>
-<p>A feedback device (encoder or potentiometer)</p>
-<p>A control circuit (servo controller or driver)</p>
-<p>The feedback device continuously measures the motor’s position, and the control circuit adjusts the motor’s movement to match the desired value.</p>
+<p>A servo motor system consists of:
+A motor (DC or AC)
+A feedback device (encoder or potentiometer)
+A control circuit (servo controller or driver)
+The feedback device continuously measures the motor’s position, and the control circuit adjusts the motor’s movement to match the desired value.</p>
 <ol>
 <li>Working Principle</li>
 </ol>
-<p>An input signal specifies the desired position.</p>
-<p>The controller compares this input with the feedback signal from the sensor.</p>
-<p>The error signal (difference between desired and actual position) is generated.</p>
-<p>The controller drives the motor to correct the error.</p>
-<p>The motor stops when the error reaches zero.</p>
-<p>This process is called closed-loop control, as it constantly checks and corrects the position.</p>
+<p>An input signal specifies the desired position.
+The controller compares this input with the feedback signal from the sensor.
+The error signal (difference between desired and actual position) is generated.
+The controller drives the motor to correct the error.
+The motor stops when the error reaches zero.
+This process is called closed-loop control, as it constantly checks and corrects the position.</p>
 <ol>
 <li>Main Components</li>
 </ol>
@@ -452,6 +390,28 @@
 </tr>
 </tbody>
 </table>
+<div class="codehilite"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Servo.h&gt;</span><span class="c1">  // Include Servo library</span>
+
+<span class="n">Servo</span><span class="w"> </span><span class="n">myServo</span><span class="p">;</span><span class="w">      </span><span class="c1">// Create Servo object</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">myServo</span><span class="p">.</span><span class="n">attach</span><span class="p">(</span><span class="mi">9</span><span class="p">);</span><span class="w">  </span><span class="c1">// Attach servo signal to pin 9</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">myServo</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w">    </span><span class="c1">// Move to 0 degrees</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w">         </span><span class="c1">// Wait 1 second</span>
+
+<span class="w">  </span><span class="n">myServo</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mi">90</span><span class="p">);</span><span class="w">   </span><span class="c1">// Move to 90 degrees</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w">         </span><span class="c1">// Wait 1 second</span>
+
+<span class="w">  </span><span class="n">myServo</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mi">180</span><span class="p">);</span><span class="w">  </span><span class="c1">// Move to 180 degrees</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w">         </span><span class="c1">// Wait 1 second</span>
+
+<span class="w">  </span><span class="n">myServo</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mi">90</span><span class="p">);</span><span class="w">   </span><span class="c1">// Return to 90 degrees</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w">         </span><span class="c1">// Wait 1 second</span>
+<span class="p">}</span>
+</code></pre></div>
 
 
 
