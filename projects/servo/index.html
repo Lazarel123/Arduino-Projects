@@ -289,19 +289,6 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Servo Motor
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -313,43 +300,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#components" class="md-nav__link">
-    <span class="md-ellipsis">
-      Components
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#code" class="md-nav__link">
-    <span class="md-ellipsis">
-      Code
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -383,32 +333,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#components" class="md-nav__link">
-    <span class="md-ellipsis">
-      Components
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#code" class="md-nav__link">
-    <span class="md-ellipsis">
-      Code
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -427,31 +351,22 @@
 
 
 <h1 id="servo-motor-control">Servo Motor Control</h1>
-<p>This Arduino sketch controls a servo motor by rotating it to 0°, 90°, and 180° positions in a loop.  </p>
-<hr />
-<h2 id="components">Components</h2>
-<ul>
-<li>Arduino Uno</li>
-<li>SG90 Servo Motor</li>
-<li>Jumper Wires</li>
-</ul>
-<hr />
-<h2 id="code">Code</h2>
+<p>This example demonstrates how to control a servo motor using Arduino.</p>
 <p>```cpp</p>
-<h1 id="include-perfshijme-librarine-servo-per-te-kontrolluar-motoret-servo">include <Servo.h>  // Përfshijmë librarinë Servo për të kontrolluar motorët servo</h1>
-<p>Servo myServo;      // Krijojmë një objekt të tipit Servo me emrin "myServo"</p>
+<h1 id="include-include-the-servo-library">include <Servo.h>  // Include the Servo library</h1>
+<p>Servo myServo;  // Create a Servo object named "myServo"</p>
 <p>void setup() {
-  myServo.attach(9);  // Lidhim servon me pinin 9 të Arduinos (ky është pini i sinjalit të servo-s)
+  myServo.attach(9);  // Attach the servo to pin 9
 }</p>
 <p>void loop() {
-  myServo.write(0);    // Rrotullon servon në pozicionin 0 gradë
-  delay(1000);         // Pret 1 sekondë</p>
-<p>myServo.write(90);   // Rrotullon servon në pozicionin 90 gradë (në mes)
-  delay(1000);         // Pret 1 sekondë</p>
-<p>myServo.write(180);  // Rrotullon servon në pozicionin 180 gradë (maksimumi)
-  delay(1000);         // Pret 1 sekondë</p>
-<p>myServo.write(90);   // Kthehet përsëri në 90 gradë (pozicioni qendror)
-  delay(1000);         // Pret 1 sekondë para se cikli të fillojë nga e para
+  myServo.write(0);    // Rotate servo to 0 degrees
+  delay(1000);         // Wait 1 second</p>
+<p>myServo.write(90);   // Rotate servo to 90 degrees (middle)
+  delay(1000);         // Wait 1 second</p>
+<p>myServo.write(180);  // Rotate servo to 180 degrees (maximum)
+  delay(1000);         // Wait 1 second</p>
+<p>myServo.write(90);   // Return to 90 degrees
+  delay(1000);         // Wait 1 second before repeating
 }</p>
 
 
