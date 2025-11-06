@@ -445,16 +445,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#distance-cm" class="md-nav__link">
-    <span class="md-ellipsis">
-      Distance (cm)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Distance (cm)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#3-main-components" class="md-nav__link">
     <span class="md-ellipsis">
       3. Main Components
@@ -462,8 +452,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#4-circuit-connection" class="md-nav__link">
     <span class="md-ellipsis">
       4. Circuit Connection
@@ -471,18 +461,13 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#example-code-basic-ultrasonic-distance-reading" class="md-nav__link">
     <span class="md-ellipsis">
       Example Code: Basic Ultrasonic distance reading
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -554,16 +539,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#distance-cm" class="md-nav__link">
-    <span class="md-ellipsis">
-      Distance (cm)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Distance (cm)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#3-main-components" class="md-nav__link">
     <span class="md-ellipsis">
       3. Main Components
@@ -571,8 +546,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#4-circuit-connection" class="md-nav__link">
     <span class="md-ellipsis">
       4. Circuit Connection
@@ -580,18 +555,13 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#example-code-basic-ultrasonic-distance-reading" class="md-nav__link">
     <span class="md-ellipsis">
       Example Code: Basic Ultrasonic distance reading
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -614,6 +584,8 @@
   
 
 
+  <h1>Ultrasonic</h1>
+
 <h2 id="arduino-ultrasonic-distance-measurement">Arduino Ultrasonic Distance Measurement</h2>
 <p>This project demonstrates how to use an <strong>Ultrasonic Sensor (HC-SR04)</strong> with Arduino to measure the distance of an object.
 The sensor sends out an <strong>ultrasonic pulse</strong> and measures how long it takes for the <strong>echo</strong> to return — allowing you to calculate how far away an object is.</p>
@@ -626,14 +598,15 @@ By calculating the time difference, the Arduino can determine the distance betwe
 <p>The <strong>ECHO pin</strong> receives the reflected sound wave (echo) from the object.</p>
 <p>The Arduino measures how long the echo pin stays <strong>HIGH (time of flight).</strong></p>
 <p>Using the speed of sound <strong>(≈ 0.034 cm/µs),</strong> Arduino calculates the distance:</p>
-<h1 id="distance-cm">Distance (cm)</h1>
-<p>Duration
-×
-0.034
-2
-Distance (cm)=
-2
-Duration×0.034
+<p><strong>Distance (cm)</strong>
+<strong>=</strong>
+<strong>Duration</strong>
+<strong>×</strong>
+<strong>0.034</strong>
+<strong>2</strong>
+<strong>Distance (cm)=</strong>
+<strong>2</strong>
+<strong>Duration×0.034</strong>
     ​</p>
 <p>The division by 2 accounts for the signal traveling to the object and back.</p>
 <h2 id="3-main-components">3. Main Components</h2>
