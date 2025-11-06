@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A collection of Arduino experiments and code">
+        <meta name="description" content="A collection of Arduino experiments and code.">
       
       
       
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#servo-motor-code" class="md-skip">
+        <a href="#servo-motor-control" class="md-skip">
           Skip to content
         </a>
       
@@ -286,6 +286,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -318,6 +320,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -326,18 +330,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#servo-motor-code" class="md-nav__link">
+  <a href="#components" class="md-nav__link">
     <span class="md-ellipsis">
-      Servo Motor Code
+      Components
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#include-perfshijme-librarine-servo-per-te-kontrolluar-motoret-servo" class="md-nav__link">
+  <a href="#code" class="md-nav__link">
     <span class="md-ellipsis">
-      include //Përfshijmë librarinë Servo për të kontrolluar motorët servo
+      Code
     </span>
   </a>
   
@@ -376,6 +380,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -384,18 +390,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#servo-motor-code" class="md-nav__link">
+  <a href="#components" class="md-nav__link">
     <span class="md-ellipsis">
-      Servo Motor Code
+      Components
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#include-perfshijme-librarine-servo-per-te-kontrolluar-motoret-servo" class="md-nav__link">
+  <a href="#code" class="md-nav__link">
     <span class="md-ellipsis">
-      include //Përfshijmë librarinë Servo për të kontrolluar motorët servo
+      Code
     </span>
   </a>
   
@@ -420,9 +426,19 @@
   
 
 
-<h2 id="servo-motor-code">Servo Motor Code</h2>
+<h1 id="servo-motor-control">Servo Motor Control</h1>
+<p>This Arduino sketch controls a servo motor by rotating it to 0°, 90°, and 180° positions in a loop.  </p>
+<hr />
+<h2 id="components">Components</h2>
+<ul>
+<li>Arduino Uno</li>
+<li>SG90 Servo Motor</li>
+<li>Jumper Wires</li>
+</ul>
+<hr />
+<h2 id="code">Code</h2>
 <p>```cpp</p>
-<h1 id="include-perfshijme-librarine-servo-per-te-kontrolluar-motoret-servo">include <Servo.h>  //Përfshijmë librarinë Servo për të kontrolluar motorët servo</h1>
+<h1 id="include-perfshijme-librarine-servo-per-te-kontrolluar-motoret-servo">include <Servo.h>  // Përfshijmë librarinë Servo për të kontrolluar motorët servo</h1>
 <p>Servo myServo;      // Krijojmë një objekt të tipit Servo me emrin "myServo"</p>
 <p>void setup() {
   myServo.attach(9);  // Lidhim servon me pinin 9 të Arduinos (ky është pini i sinjalit të servo-s)
