@@ -11,6 +11,8 @@
       
       
       
+        <link rel="prev" href="../led/">
+      
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -18,7 +20,7 @@
     
     
       
-        <title>Servo Motor - Arduino Projects</title>
+        <title>Infrared+Led - Arduino Projects</title>
       
     
     
@@ -60,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#servo-motor" class="md-skip">
+        <a href="#arduino-infrared-sensor-with-led-indicator" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Servo Motor
+              Infrared+Led
             
           </span>
         </div>
@@ -235,18 +237,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -262,7 +266,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Projects
@@ -315,6 +319,89 @@
 
               
             
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Infrared+Led
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Infrared+Led
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-basic-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Basic Concept
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-working-principle" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Working Principle
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -349,9 +436,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#example-code" class="md-nav__link">
+  <a href="#1-basic-concept" class="md-nav__link">
     <span class="md-ellipsis">
-      Example Code:
+      1. Basic Concept
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-working-principle" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Working Principle
     </span>
   </a>
   
@@ -376,79 +472,19 @@
   
 
 
-<h1 id="servo-motor">Servo Motor</h1>
-<p>A servo motor is a type of motor designed for precise control of angular or linear position, velocity, and acceleration. It operates as part of a closed-loop control system that constantly monitors and adjusts its motion to achieve accurate positioning.</p>
-<ol>
-<li>Basic Concept</li>
-</ol>
-<p>A servo motor system consists of:
-A motor (DC or AC)
-A feedback device (encoder or potentiometer)
-A control circuit (servo controller or driver)
-The feedback device continuously measures the motor’s position, and the control circuit adjusts the motor’s movement to match the desired value.</p>
-<ol>
-<li>Working Principle</li>
-</ol>
-<p>An input signal specifies the desired position.
-The controller compares this input with the feedback signal from the sensor.
-The error signal (difference between desired and actual position) is generated.
-The controller drives the motor to correct the error.
-The motor stops when the error reaches zero.
-This process is called closed-loop control, as it constantly checks and corrects the position.</p>
-<ol>
-<li>Main Components</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>Component</th>
-<th>Function</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Motor</strong></td>
-<td>Provides the mechanical motion.</td>
-</tr>
-<tr>
-<td><strong>Gearbox</strong></td>
-<td>Reduces speed and increases torque.</td>
-</tr>
-<tr>
-<td><strong>Feedback Sensor</strong></td>
-<td>Measures shaft position and provides feedback.</td>
-</tr>
-<tr>
-<td><strong>Control Circuit</strong></td>
-<td>Compares input and feedback signals and drives the motor accordingly.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="example-code">Example Code:</h2>
-<div class="codehilite"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Servo.h&gt;</span><span class="c1">  // Include Servo library</span>
-
-<span class="n">Servo</span><span class="w"> </span><span class="n">myServo</span><span class="p">;</span><span class="w">      </span><span class="c1">// Create Servo object</span>
-
-<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">myServo</span><span class="p">.</span><span class="n">attach</span><span class="p">(</span><span class="mi">9</span><span class="p">);</span><span class="w">  </span><span class="c1">// Attach servo signal to pin 9</span>
-<span class="p">}</span>
-
-<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">myServo</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w">    </span><span class="c1">// Move to 0 degrees</span>
-<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w">         </span><span class="c1">// Wait 1 second</span>
-
-<span class="w">  </span><span class="n">myServo</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mi">90</span><span class="p">);</span><span class="w">   </span><span class="c1">// Move to 90 degrees</span>
-<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w">         </span><span class="c1">// Wait 1 second</span>
-
-<span class="w">  </span><span class="n">myServo</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mi">180</span><span class="p">);</span><span class="w">  </span><span class="c1">// Move to 180 degrees</span>
-<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w">         </span><span class="c1">// Wait 1 second</span>
-
-<span class="w">  </span><span class="n">myServo</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mi">90</span><span class="p">);</span><span class="w">   </span><span class="c1">// Return to 90 degrees</span>
-<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w">         </span><span class="c1">// Wait 1 second</span>
-<span class="p">}</span>
-</code></pre></div>
-
-<p>Made by: LazarelGoga</p>
+<h1 id="arduino-infrared-sensor-with-led-indicator">Arduino Infrared Sensor with LED Indicator</h1>
+<p>This project demonstrates how to use an <strong>infrared (IR)</strong> sensor with an <strong>LED</strong> to detect the presence of an object. When the sensor detects something in front of it, the <strong>LED</strong> automatically turns on and blinks.</p>
+<h2 id="1-basic-concept">1. Basic Concept</h2>
+<p>An infrared sensor emits infrared light and detects the reflection from nearby objects.
+When an object is detected, the sensor’s <strong>digital output</strong> changes — this signal can then be used to <strong>trigger</strong> other components, such as an <strong>LED.</strong></p>
+<p>With <strong>Arduino</strong>, we can easily read the sensor’s digital output and control an LED** or any other actuator in response.</p>
+<h2 id="2-working-principle">2. Working Principle</h2>
+<p>The IR sensor outputs a <strong>HIGH (1)</strong> or <strong>LOW (0)</strong> signal based on whether it detects an object.</p>
+<p><strong>HIGH (1): Object detected</strong></p>
+<p><strong>LOW (0): No object detected</strong></p>
+<p>The Arduino reads this signal using digitalRead().</p>
+<p>When detection occurs, the Arduino turns the LED <strong>ON</strong> for 0.5 seconds, then turns it <strong>OFF</strong>.</p>
+<p>The Serial Monitor shows the live sensor readings in <strong>real time.</strong></p>
 
 
 
