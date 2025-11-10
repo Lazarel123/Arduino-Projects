@@ -333,7 +333,7 @@
   
   
   <span class="md-ellipsis">
-    Infrared-Led
+    Infrared & Led
     
   </span>
   
@@ -700,49 +700,59 @@ By calculating the time difference, the Arduino can determine the distance betwe
 </table>
 <h2 id="example-code-basic-ultrasonic-distance-reading">Example Code: Basic Ultrasonic Distance Reading</h2>
 <div class="codehilite"><pre><span></span><code><span class="cp">#define TRIG_PIN 9   </span><span class="c1">// The TRIG pin of the sensor is connected to Arduino pin 9</span>
-<span class="cp">#define ECHO_PIN 10  </span><span class="c1">// The ECHO pin of the sensor is connected to Arduino pin 10</span>
+<span class="cp">#define ECHO_PIN 10   </span><span class="c1">// The ECHO pin of the sensor is connected to Arduino pin 10</span>
 
 <span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span><span class="w">        </span><span class="c1">// Start serial communication at 9600 bps to view data in Serial Monitor</span>
-<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">TRIG_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"> </span><span class="c1">// Set TRIG pin as output (to send the signal)</span>
-<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">ECHO_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="p">);</span><span class="w">  </span><span class="c1">// Set ECHO pin as input (to receive the reflected signal)</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span><span class="w">   </span><span class="c1">// Start serial communication at 9600 bps to view data in Serial Monitor</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">TRIG_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w">   </span><span class="c1">// Set TRIG pin as output (to send the signal)</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">ECHO_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="p">);</span><span class="w">   </span><span class="c1">// Set ECHO pin as input (to receive the reflected signal)</span>
 <span class="p">}</span>
 
 <span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kt">long</span><span class="w"> </span><span class="n">duration</span><span class="p">;</span><span class="w">  </span><span class="c1">// Variable to store the time the echo signal lasts</span>
-<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">distance</span><span class="p">;</span><span class="w"> </span><span class="c1">// Variable to store the calculated distance in centimeters</span>
+<span class="w">  </span><span class="kt">long</span><span class="w"> </span><span class="n">duration</span><span class="p">;</span><span class="w">   </span><span class="c1">// Variable to store the time the echo signal lasts</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">distance</span><span class="p">;</span><span class="w">   </span><span class="c1">// Variable to store the calculated distance in centimeters</span>
 
-<span class="w">  </span><span class="c1">// Send a 10 microsecond pulse from TRIG to start the measurement</span>
+<span class="c1">// Send a 10 microsecond pulse from TRIG to start the measurement</span>
+
 <span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">TRIG_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w">      </span><span class="c1">// Ensure TRIG is initially LOW (0V)</span>
 <span class="w">  </span><span class="n">delayMicroseconds</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="w">             </span><span class="c1">// Wait for 2 microseconds</span>
 <span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">TRIG_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w">     </span><span class="c1">// Set TRIG HIGH (5V)</span>
 <span class="w">  </span><span class="n">delayMicroseconds</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span><span class="w">            </span><span class="c1">// Keep it HIGH for 10 microseconds</span>
 <span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">TRIG_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w">      </span><span class="c1">// Set TRIG back to LOW (0V)</span>
 
-<span class="w">  </span><span class="c1">// Measure how long the ECHO pin stays HIGH (the time it takes for the sound to return)</span>
+<span class="c1">// Measure how long the ECHO pin stays HIGH (the time it takes for the sound to return)</span>
+
 <span class="w">  </span><span class="n">duration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pulseIn</span><span class="p">(</span><span class="n">ECHO_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span>
 
-<span class="w">  </span><span class="c1">// Calculate the distance in centimeters</span>
-<span class="w">  </span><span class="c1">// Speed of sound ≈ 0.034 cm per microsecond</span>
-<span class="w">  </span><span class="c1">// Divide by 2 because the signal travels to the object and back</span>
+<span class="c1">// Calculate the distance in centimeters</span>
+<span class="c1">// Speed of sound ≈ 0.034 cm per microsecond</span>
+<span class="c1">// Divide by 2 because the signal travels to the object and back</span>
+
 <span class="w">  </span><span class="n">distance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">duration</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.034</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
 
 <span class="w">  </span><span class="c1">// Display the distance in the Serial Monitor</span>
+
 <span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Distance: &quot;</span><span class="p">);</span>
 <span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">distance</span><span class="p">);</span>
 <span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot; cm&quot;</span><span class="p">);</span>
 
-<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span><span class="w"> </span><span class="c1">// Wait half a second before the next measurement</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span><span class="w">   </span><span class="c1">// Wait half a second before the next measurement</span>
 <span class="p">}</span>
 </code></pre></div>
 
 <hr />
-<p><strong>Essential information</strong>
-    <div style="text-align:center; font-size:0.9em; color:white; background-color:#202020; padding:0.5rem; border-radius: 20px;">
-      Made by <a href="https://github.com/Lazarel123" style="color:#1976D2;">Lazarel Goga</a> |
-      Contact: <a href="mailto:lazarel.goga24@umt.edu.al" style="color:#1976D2;">lazarel.goga24@umt.edu.al</a> |
-      <a href="https://arduino.cc" style="color:#976D2;">Arduino</a> |
-    </div></p>
+<footer style="background-color:#1A1A1A; color:#E0E0E0; text-align:center; padding:1rem; margin:0; width:100%;">
+  <p style="margin:0; font-weight:bold; font-size:1.1em;">© 2025 ArduVault</p>
+  <p style="margin:0.3rem 0;">
+    Created by 
+    <a href="https://github.com/Lazarel123" style="color:#64B5F6; text-decoration:none;">Lazarel Goga</a> • 
+    Contact: <a href="mailto:lazarel.goga24@umt.edu.al" style="color:#64B5F6; text-decoration:none;">lazarel.goga24@umt.edu.al</a>
+  </p>
+  <p style="margin:0.3rem 0;">
+    Powered by <a href="https://arduino.cc" style="color:#64B5F6; text-decoration:none;">Arduino</a> &amp; 
+    <a href="https://www.mkdocs.org/" style="color:#64B5F6; text-decoration:none;">MkDocs</a>
+  </p>
+</footer>
 
 
 

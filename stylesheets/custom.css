@@ -105,3 +105,20 @@ body, .md-content, .md-typeset {
   font-weight: 700;
   color: #1565C0 !important; 
 }
+
+
+.md-nav__link, .md-nav__item {
+  font-size: 0.95rem;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+
+:root {
+  --md-text-font: "Inter", sans-serif;
+  --md-code-font: "Fira Code", monospace;
+}
+
+
+

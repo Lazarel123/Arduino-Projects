@@ -333,7 +333,7 @@
   
   
   <span class="md-ellipsis">
-    Infrared-Led
+    Infrared & Led
     
   </span>
   
@@ -704,49 +704,49 @@ Since Arduino pins cannot supply enough current to drive motors directly, the <s
 <div class="codehilite"><pre><span></span><code><span class="c1">// Motor A: left motor</span>
 <span class="c1">// Motor B: right motor</span>
 
-<span class="cp">#define ENA 3  </span><span class="c1">// PWM pin for motor A speed control</span>
-<span class="cp">#define IN1 8  </span><span class="c1">// Direction pin 1 for motor A</span>
-<span class="cp">#define IN2 7  </span><span class="c1">// Direction pin 2 for motor A</span>
-<span class="cp">#define ENB 4  </span><span class="c1">// PWM pin for motor B speed control</span>
-<span class="cp">#define IN3 6  </span><span class="c1">// Direction pin 1 for motor B</span>
-<span class="cp">#define IN4 5  </span><span class="c1">// Direction pin 2 for motor B</span>
+<span class="cp">#define ENA 3   </span><span class="c1">// PWM pin for motor A speed control</span>
+<span class="cp">#define IN1 8   </span><span class="c1">// Direction pin 1 for motor A</span>
+<span class="cp">#define IN2 7   </span><span class="c1">// Direction pin 2 for motor A</span>
+<span class="cp">#define ENB 4   </span><span class="c1">// PWM pin for motor B speed control</span>
+<span class="cp">#define IN3 6   </span><span class="c1">// Direction pin 1 for motor B</span>
+<span class="cp">#define IN4 5   </span><span class="c1">// Direction pin 2 for motor B</span>
 
 <span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">ENA</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"> </span><span class="c1">// Set ENA as output (speed control)</span>
-<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">IN1</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"> </span><span class="c1">// Set IN1 as output (motor A direction)</span>
-<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">IN2</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"> </span><span class="c1">// Set IN2 as output (motor A direction)</span>
-<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">ENB</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"> </span><span class="c1">// Set ENB as output (speed control)</span>
-<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">IN3</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"> </span><span class="c1">// Set IN3 as output (motor B direction)</span>
-<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">IN4</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"> </span><span class="c1">// Set IN4 as output (motor B direction)</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">ENA</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w">   </span><span class="c1">// Set ENA as output (speed control)</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">IN1</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w">   </span><span class="c1">// Set IN1 as output (motor A direction)</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">IN2</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w">   </span><span class="c1">// Set IN2 as output (motor A direction)</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">ENB</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w">   </span><span class="c1">// Set ENB as output (speed control)</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">IN3</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w">   </span><span class="c1">// Set IN3 as output (motor B direction)</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">IN4</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w">   </span><span class="c1">// Set IN4 as output (motor B direction)</span>
 <span class="p">}</span>
 
 <span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="n">forward</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span><span class="w">   </span><span class="c1">// Move both motors forward at speed 200</span>
-<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span><span class="w">    </span><span class="c1">// Wait 2 seconds</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span><span class="w">   </span><span class="c1">// Wait 2 seconds</span>
 
-<span class="w">  </span><span class="n">backward</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span><span class="w">  </span><span class="c1">// Move both motors backward at speed 200</span>
-<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span><span class="w">    </span><span class="c1">// Wait 2 seconds</span>
+<span class="w">  </span><span class="n">backward</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span><span class="w">   </span><span class="c1">// Move both motors backward at speed 200</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span><span class="w">   </span><span class="c1">// Wait 2 seconds</span>
 
 <span class="w">  </span><span class="n">stopMotors</span><span class="p">();</span><span class="w">   </span><span class="c1">// Stop both motors</span>
-<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span><span class="w">    </span><span class="c1">// Wait 2 seconds</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span><span class="w">   </span><span class="c1">// Wait 2 seconds</span>
 <span class="p">}</span>
 
 <span class="kt">void</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">speed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN1</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w"> </span><span class="c1">// Motor A forward</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN1</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w">   </span><span class="c1">// Motor A forward</span>
 <span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN2</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
-<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN3</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w"> </span><span class="c1">// Motor B forward</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN3</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w">   </span><span class="c1">// Motor B forward</span>
 <span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN4</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
-<span class="w">  </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">ENA</span><span class="p">,</span><span class="w"> </span><span class="n">speed</span><span class="p">);</span><span class="w"> </span><span class="c1">// Set motor A speed</span>
-<span class="w">  </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">ENB</span><span class="p">,</span><span class="w"> </span><span class="n">speed</span><span class="p">);</span><span class="w"> </span><span class="c1">// Set motor B speed</span>
+<span class="w">  </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">ENA</span><span class="p">,</span><span class="w"> </span><span class="n">speed</span><span class="p">);</span><span class="w">   </span><span class="c1">// Set motor A speed</span>
+<span class="w">  </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">ENB</span><span class="p">,</span><span class="w"> </span><span class="n">speed</span><span class="p">);</span><span class="w">   </span><span class="c1">// Set motor B speed</span>
 <span class="p">}</span>
 
 <span class="kt">void</span><span class="w"> </span><span class="nf">backward</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">speed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN1</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w">  </span><span class="c1">// Motor A backward</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN1</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w">   </span><span class="c1">// Motor A backward</span>
 <span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN2</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span>
-<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN3</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w">  </span><span class="c1">// Motor B backward</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN3</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w">   </span><span class="c1">// Motor B backward</span>
 <span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN4</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span>
-<span class="w">  </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">ENA</span><span class="p">,</span><span class="w"> </span><span class="n">speed</span><span class="p">);</span><span class="w"> </span><span class="c1">// Set motor A speed</span>
-<span class="w">  </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">ENB</span><span class="p">,</span><span class="w"> </span><span class="n">speed</span><span class="p">);</span><span class="w"> </span><span class="c1">// Set motor B speed</span>
+<span class="w">  </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">ENA</span><span class="p">,</span><span class="w"> </span><span class="n">speed</span><span class="p">);</span><span class="w">   </span><span class="c1">// Set motor A speed</span>
+<span class="w">  </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">ENB</span><span class="p">,</span><span class="w"> </span><span class="n">speed</span><span class="p">);</span><span class="w">   </span><span class="c1">// Set motor B speed</span>
 <span class="p">}</span>
 
 <span class="kt">void</span><span class="w"> </span><span class="nf">stopMotors</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -754,18 +754,24 @@ Since Arduino pins cannot supply enough current to drive motors directly, the <s
 <span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN2</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
 <span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN3</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
 <span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">IN4</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span>
-<span class="w">  </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">ENA</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// Stop motor A</span>
-<span class="w">  </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">ENB</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// Stop motor B</span>
+<span class="w">  </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">ENA</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w">   </span><span class="c1">// Stop motor A</span>
+<span class="w">  </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">ENB</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w">   </span><span class="c1">// Stop motor B</span>
 <span class="p">}</span>
 </code></pre></div>
 
 <hr />
-<p><strong>Essential information</strong>
-    <div style="text-align:center; font-size:0.9em; color:white; background-color:#202020; padding:0.5rem; border-radius: 20px;">
-      Made by <a href="https://github.com/Lazarel123" style="color:#1976D2;">Lazarel Goga</a> |
-      Contact: <a href="mailto:lazarel.goga24@umt.edu.al" style="color:#1976D2;">lazarel.goga24@umt.edu.al</a> |
-      <a href="https://arduino.cc" style="color:#976D2;">Arduino</a> |
-    </div></p>
+<footer style="background-color:#1A1A1A; color:#E0E0E0; text-align:center; padding:1rem; margin:0; width:100%;">
+  <p style="margin:0; font-weight:bold; font-size:1.1em;">© 2025 ArduVault</p>
+  <p style="margin:0.3rem 0;">
+    Created by 
+    <a href="https://github.com/Lazarel123" style="color:#64B5F6; text-decoration:none;">Lazarel Goga</a> • 
+    Contact: <a href="mailto:lazarel.goga24@umt.edu.al" style="color:#64B5F6; text-decoration:none;">lazarel.goga24@umt.edu.al</a>
+  </p>
+  <p style="margin:0.3rem 0;">
+    Powered by <a href="https://arduino.cc" style="color:#64B5F6; text-decoration:none;">Arduino</a> &amp; 
+    <a href="https://www.mkdocs.org/" style="color:#64B5F6; text-decoration:none;">MkDocs</a>
+  </p>
+</footer>
 
 
 

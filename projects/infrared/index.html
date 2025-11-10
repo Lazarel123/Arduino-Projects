@@ -22,7 +22,7 @@
     
     
       
-        <title>Infrared-Led - ArduVault</title>
+        <title>Infrared & Led - ArduVault</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#arduino-infrared-sensor-with-led-indicator" class="md-skip">
+        <a href="#infrared-led" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Infrared-Led
+              Infrared & Led
             
           </span>
         </div>
@@ -342,7 +342,7 @@
   
   
   <span class="md-ellipsis">
-    Infrared-Led
+    Infrared & Led
     
   </span>
   
@@ -355,7 +355,7 @@
   
   
   <span class="md-ellipsis">
-    Infrared-Led
+    Infrared & Led
     
   </span>
   
@@ -376,6 +376,15 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#arduino-infrared-sensor-with-led-indicator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arduino Infrared Sensor with LED Indicator
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#1-basic-concept" class="md-nav__link">
@@ -534,6 +543,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#arduino-infrared-sensor-with-led-indicator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arduino Infrared Sensor with LED Indicator
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#1-basic-concept" class="md-nav__link">
     <span class="md-ellipsis">
       1. Basic Concept
@@ -597,7 +615,8 @@
   
 
 
-<h1 id="arduino-infrared-sensor-with-led-indicator">Arduino Infrared Sensor with LED Indicator</h1>
+<h1 id="infrared-led">Infrared &amp; Led</h1>
+<h2 id="arduino-infrared-sensor-with-led-indicator">Arduino Infrared Sensor with LED Indicator</h2>
 <p>This project demonstrates how to use an <strong>infrared (IR)</strong> sensor with an <strong>LED</strong> to detect the presence of an object. When the sensor detects something in front of it, the <strong>LED</strong> automatically turns on and blinks.</p>
 <h2 id="1-basic-concept">1. Basic Concept</h2>
 <p>An infrared sensor emits infrared light and detects the reflection from nearby objects.
@@ -684,38 +703,44 @@ When an object is detected, the sensor’s <strong>digital output</strong> chang
 </table>
 <h2 id="example-code-led-plus-infrared-example">Example Code: Led Plus Infrared Example</h2>
 <div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">infrared</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span><span class="w">   </span><span class="c1">// Infrared sensor connected to digital pin 6</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">LED</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">        </span><span class="c1">// LED connected to digital pin 5</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">LED</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">   </span><span class="c1">// LED connected to digital pin 5</span>
 
 <span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w">     </span><span class="c1">// Set the LED pin as output</span>
-<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">infrared</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="p">);</span><span class="w">    </span><span class="c1">// Set the infrared sensor pin as input</span>
-<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span><span class="w">       </span><span class="c1">// Start Serial Monitor to display data</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w">   </span><span class="c1">// Set the LED pin as output</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">infrared</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="p">);</span><span class="w">   </span><span class="c1">// Set the infrared sensor pin as input</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span><span class="w">   </span><span class="c1">// Start Serial Monitor to display data</span>
 <span class="p">}</span>
 
 <span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">sensorValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">digitalRead</span><span class="p">(</span><span class="n">infrared</span><span class="p">);</span><span class="w">         </span><span class="c1">// Read the digital value from the sensor (0 or 1)</span>
-<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">sensorValue</span><span class="p">);</span><span class="w">               </span><span class="c1">// Print the value to the Serial Monitor</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">sensorValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">digitalRead</span><span class="p">(</span><span class="n">infrared</span><span class="p">);</span><span class="w">   </span><span class="c1">// Read the digital value from the sensor (0 or 1)</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">sensorValue</span><span class="p">);</span><span class="w">   </span><span class="c1">// Print the value to the Serial Monitor</span>
 
 <span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">sensorValue</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                  </span>
-<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w">      </span><span class="c1">// Turn the LED on</span>
-<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span><span class="w">                   </span><span class="c1">// Keep the LED on for 0.5 seconds</span>
-<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w">       </span><span class="c1">// Turn the LED off</span>
-<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span><span class="w">                   </span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w">   </span><span class="c1">// Turn the LED on</span>
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span><span class="w">   </span><span class="c1">// Keep the LED on for 0.5 seconds</span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w">   </span><span class="c1">// Turn the LED off</span>
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span><span class="w">   </span><span class="c1">// Keep the LED on for 0.5 seconds                   </span>
 <span class="w">  </span><span class="p">}</span><span class="w"> </span>
 <span class="w">  </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">                         </span>
-<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w">       </span><span class="c1">// Keep the LED off when no object is detected</span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w">   </span><span class="c1">// Keep the LED off when no object is detected</span>
 <span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w">                  </span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 
 <hr />
-<p><strong>Essential information</strong>
-    <div style="text-align:center; font-size:0.9em; color:white; background-color:#202020; padding:0.5rem; border-radius: 20px;">
-      Made by <a href="https://github.com/Lazarel123" style="color:#1976D2;">Lazarel Goga</a> |
-      Contact: <a href="mailto:lazarel.goga24@umt.edu.al" style="color:#1976D2;">lazarel.goga24@umt.edu.al</a> |
-      <a href="https://arduino.cc" style="color:#976D2;">Arduino</a> |
-    </div></p>
+<footer style="background-color:#1A1A1A; color:#E0E0E0; text-align:center; padding:1rem; margin:0; width:100%;">
+  <p style="margin:0; font-weight:bold; font-size:1.1em;">© 2025 ArduVault</p>
+  <p style="margin:0.3rem 0;">
+    Created by 
+    <a href="https://github.com/Lazarel123" style="color:#64B5F6; text-decoration:none;">Lazarel Goga</a> • 
+    Contact: <a href="mailto:lazarel.goga24@umt.edu.al" style="color:#64B5F6; text-decoration:none;">lazarel.goga24@umt.edu.al</a>
+  </p>
+  <p style="margin:0.3rem 0;">
+    Powered by <a href="https://arduino.cc" style="color:#64B5F6; text-decoration:none;">Arduino</a> &amp; 
+    <a href="https://www.mkdocs.org/" style="color:#64B5F6; text-decoration:none;">MkDocs</a>
+  </p>
+</footer>
 
 
 

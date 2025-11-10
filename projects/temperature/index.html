@@ -331,7 +331,7 @@
   
   
   <span class="md-ellipsis">
-    Infrared-Led
+    Infrared & Led
     
   </span>
   
@@ -672,35 +672,42 @@ We then convert this value into Celsius using a simple formula:</p>
 </tr>
 </tbody>
 </table>
-<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">sensorPin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A0</span><span class="p">;</span><span class="w"> </span><span class="c1">// Analog pin A0 connected to LM35 temperature sensor</span>
-<span class="kt">float</span><span class="w"> </span><span class="n">sensorValue</span><span class="p">;</span><span class="w">  </span><span class="c1">// Variable for storing the raw sensor reading (0–1023)</span>
-<span class="kt">float</span><span class="w"> </span><span class="n">temperatureC</span><span class="p">;</span><span class="w"> </span><span class="c1">// Variable for storing the calculated temperature in Celsius</span>
+<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">sensorPin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A0</span><span class="p">;</span><span class="w">   </span><span class="c1">// Analog pin A0 connected to LM35 temperature sensor</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">sensorValue</span><span class="p">;</span><span class="w">   </span><span class="c1">// Variable for storing the raw sensor reading (0–1023)</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">temperatureC</span><span class="p">;</span><span class="w">   </span><span class="c1">// Variable for storing the calculated temperature in Celsius</span>
 
 <span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span><span class="w">    </span><span class="c1">// Start serial communication at 9600 bits per second</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span><span class="w">   </span><span class="c1">// Start serial communication at 9600 bits per second</span>
 <span class="p">}</span>
 
 <span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">sensorValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">sensorPin</span><span class="p">);</span><span class="w">     </span><span class="c1">// Read the analog value from LM35 (0 to 1023)</span>
+<span class="w">  </span><span class="n">sensorValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">sensorPin</span><span class="p">);</span><span class="w">   </span><span class="c1">// Read the analog value from LM35 (0 to 1023)</span>
 
-<span class="w">  </span><span class="c1">// Convert the analog reading to temperature in °C:</span>
-<span class="w">  </span><span class="c1">// (analog value * 5V * 100) / 1024 levels = temperature in Celsius</span>
+<span class="c1">// Convert the analog reading to temperature in °C:</span>
+<span class="c1">// (analog value * 5V * 100) / 1024 levels = temperature in Celsius</span>
 <span class="w">  </span><span class="n">temperatureC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">sensorValue</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">5.0</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">100.0</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1024.0</span><span class="p">;</span>
 
-<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Temperature: &quot;</span><span class="p">);</span><span class="w">    </span><span class="c1">// Print the label &quot;Temperature: &quot; to the Serial Monitor</span>
-<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">temperatureC</span><span class="p">);</span><span class="w">    </span><span class="c1">// Print the temperature value</span>
-<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot; °C&quot;</span><span class="p">);</span><span class="w">      </span><span class="c1">// Print the °C symbol and move to the next line</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Temperature: &quot;</span><span class="p">);</span><span class="w">   </span><span class="c1">// Print the label &quot;Temperature: &quot; to the Serial Monitor</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">temperatureC</span><span class="p">);</span><span class="w">   </span><span class="c1">// Print the temperature value</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot; °C&quot;</span><span class="p">);</span><span class="w">   </span><span class="c1">// Print the °C symbol and move to the next line</span>
 
-<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w">      </span><span class="c1">// Wait 1 second before reading again</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w">   </span><span class="c1">// Wait 1 second before reading again</span>
 <span class="p">}</span>
 </code></pre></div>
 
-<p><strong>Essential information</strong>
-    <div style="text-align:center; font-size:0.9em; color:white; background-color:#202020; padding:0.5rem; border-radius: 20px;">
-      Made by <a href="https://github.com/Lazarel123" style="color:#1976D2;">Lazarel Goga</a> |
-      Contact: <a href="mailto:lazarel.goga24@umt.edu.al" style="color:#1976D2;">lazarel.goga24@umt.edu.al</a> |
-      <a href="https://arduino.cc" style="color:#976D2;">Arduino</a> |
-    </div></p>
+<hr />
+<footer style="background-color:#1A1A1A; color:#E0E0E0; text-align:center; padding:1rem; margin:0; width:100%;">
+  <p style="margin:0; font-weight:bold; font-size:1.1em;">© 2025 ArduVault</p>
+  <p style="margin:0.3rem 0;">
+    Created by 
+    <a href="https://github.com/Lazarel123" style="color:#64B5F6; text-decoration:none;">Lazarel Goga</a> • 
+    Contact: <a href="mailto:lazarel.goga24@umt.edu.al" style="color:#64B5F6; text-decoration:none;">lazarel.goga24@umt.edu.al</a>
+  </p>
+  <p style="margin:0.3rem 0;">
+    Powered by <a href="https://arduino.cc" style="color:#64B5F6; text-decoration:none;">Arduino</a> &amp; 
+    <a href="https://www.mkdocs.org/" style="color:#64B5F6; text-decoration:none;">MkDocs</a>
+  </p>
+</footer>
 
 
 

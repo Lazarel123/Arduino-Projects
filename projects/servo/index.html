@@ -332,6 +332,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#arduino-servo-motor-control-demonstration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arduino Servo Motor Control Demonstration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#1-basic-concept" class="md-nav__link">
     <span class="md-ellipsis">
       1. Basic Concept
@@ -420,7 +429,7 @@
   
   
   <span class="md-ellipsis">
-    Infrared-Led
+    Infrared & Led
     
   </span>
   
@@ -534,6 +543,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#arduino-servo-motor-control-demonstration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arduino Servo Motor Control Demonstration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#1-basic-concept" class="md-nav__link">
     <span class="md-ellipsis">
       1. Basic Concept
@@ -598,7 +616,8 @@
 
 
 <h1 id="servo-motor">Servo Motor</h1>
-<p>A <strong>servo motor</strong> is a type of motor designed for precise control of angular or linear position, velocity, and acceleration. It operates as part of a closed-loop control system that constantly monitors and adjusts its motion to achieve accurate positioning.</p>
+<h2 id="arduino-servo-motor-control-demonstration">Arduino Servo Motor Control Demonstration</h2>
+<p>This project demonstrates how to control a servo motor using an <strong>Arduino.</strong> The servo rotates to <strong>0°, 90°, and 180°</strong> sequentially, pausing for one second at each position, before returning to <strong>90°.</strong> This cycle repeats indefinitely, allowing you to observe the servo’s movement in real time.</p>
 <h2 id="1-basic-concept">1. Basic Concept</h2>
 <p>A servo motor system consists of:
 A motor <strong>(DC or AC)</strong>
@@ -667,36 +686,42 @@ This process is called <strong>closed-loop control</strong>, as it constantly ch
 </tbody>
 </table>
 <h2 id="example-code-basic-turn-principles">Example Code: Basic Turn Principles</h2>
-<div class="codehilite"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Servo.h&gt;</span><span class="c1">  // Include Servo library</span>
+<div class="codehilite"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Servo.h&gt;</span><span class="c1">   // Include Servo library</span>
 
-<span class="n">Servo</span><span class="w"> </span><span class="n">myServo</span><span class="p">;</span><span class="w">      </span><span class="c1">// Create Servo object</span>
+<span class="n">Servo</span><span class="w"> </span><span class="n">myServo</span><span class="p">;</span><span class="w">   </span><span class="c1">// Create Servo object</span>
 
 <span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">myServo</span><span class="p">.</span><span class="n">attach</span><span class="p">(</span><span class="mi">9</span><span class="p">);</span><span class="w">  </span><span class="c1">// Attach servo signal to pin 9</span>
+<span class="w">  </span><span class="n">myServo</span><span class="p">.</span><span class="n">attach</span><span class="p">(</span><span class="mi">9</span><span class="p">);</span><span class="w">   </span><span class="c1">// Attach servo signal to pin 9</span>
 <span class="p">}</span>
 
 <span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">myServo</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w">    </span><span class="c1">// Move to 0 degrees</span>
-<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w">         </span><span class="c1">// Wait 1 second</span>
+<span class="w">  </span><span class="n">myServo</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w">   </span><span class="c1">// Move to 0 degrees</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w">   </span><span class="c1">// Wait 1 second</span>
 
 <span class="w">  </span><span class="n">myServo</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mi">90</span><span class="p">);</span><span class="w">   </span><span class="c1">// Move to 90 degrees</span>
-<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w">         </span><span class="c1">// Wait 1 second</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w">   </span><span class="c1">// Wait 1 second</span>
 
-<span class="w">  </span><span class="n">myServo</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mi">180</span><span class="p">);</span><span class="w">  </span><span class="c1">// Move to 180 degrees</span>
-<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w">         </span><span class="c1">// Wait 1 second</span>
+<span class="w">  </span><span class="n">myServo</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mi">180</span><span class="p">);</span><span class="w">   </span><span class="c1">// Move to 180 degrees</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w">   </span><span class="c1">// Wait 1 second</span>
 
 <span class="w">  </span><span class="n">myServo</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mi">90</span><span class="p">);</span><span class="w">   </span><span class="c1">// Return to 90 degrees</span>
-<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w">         </span><span class="c1">// Wait 1 second</span>
+<span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w">   </span><span class="c1">// Wait 1 second</span>
 <span class="p">}</span>
 </code></pre></div>
 
 <hr />
-<p><strong>Essential information</strong>
-    <div style="text-align:center; font-size:0.9em; color:white; background-color:#202020; padding:0.5rem; border-radius: 20px;">
-      Made by <a href="https://github.com/Lazarel123" style="color:#1976D2;">Lazarel Goga</a> |
-      Contact: <a href="mailto:lazarel.goga24@umt.edu.al" style="color:#1976D2;">lazarel.goga24@umt.edu.al</a> |
-      <a href="https://arduino.cc" style="color:#976D2;">Arduino</a> |
-    </div></p>
+<footer style="background-color:#1A1A1A; color:#E0E0E0; text-align:center; padding:1rem; margin:0; width:100%;">
+  <p style="margin:0; font-weight:bold; font-size:1.1em;">© 2025 ArduVault</p>
+  <p style="margin:0.3rem 0;">
+    Created by 
+    <a href="https://github.com/Lazarel123" style="color:#64B5F6; text-decoration:none;">Lazarel Goga</a> • 
+    Contact: <a href="mailto:lazarel.goga24@umt.edu.al" style="color:#64B5F6; text-decoration:none;">lazarel.goga24@umt.edu.al</a>
+  </p>
+  <p style="margin:0.3rem 0;">
+    Powered by <a href="https://arduino.cc" style="color:#64B5F6; text-decoration:none;">Arduino</a> &amp; 
+    <a href="https://www.mkdocs.org/" style="color:#64B5F6; text-decoration:none;">MkDocs</a>
+  </p>
+</footer>
 
 
 
