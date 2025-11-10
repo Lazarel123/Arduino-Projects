@@ -695,12 +695,12 @@ We then convert this value into Celsius using a simple formula:</p>
 </tr>
 </tbody>
 </table>
-<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">sensorPin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A0</span><span class="p">;</span><span class="w">    </span><span class="c1">// Analog pin A0 connected to LM35 temperature sensor</span>
-<span class="kt">float</span><span class="w"> </span><span class="n">sensorValue</span><span class="p">;</span><span class="w">     </span><span class="c1">// Variable for storing the raw sensor reading (0–1023)</span>
-<span class="kt">float</span><span class="w"> </span><span class="n">temperatureC</span><span class="p">;</span><span class="w">    </span><span class="c1">// Variable for storing the calculated temperature in Celsius</span>
+<div class="codehilite"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">sensorPin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A0</span><span class="p">;</span><span class="w"> </span><span class="c1">// Analog pin A0 connected to LM35 temperature sensor</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">sensorValue</span><span class="p">;</span><span class="w">  </span><span class="c1">// Variable for storing the raw sensor reading (0–1023)</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">temperatureC</span><span class="p">;</span><span class="w"> </span><span class="c1">// Variable for storing the calculated temperature in Celsius</span>
 
 <span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span><span class="w">  </span><span class="c1">// Start serial communication at 9600 bits per second</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span><span class="w"> </span><span class="c1">// Start serial communication at 9600 bits per second</span>
 <span class="p">}</span>
 
 <span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -710,9 +710,9 @@ We then convert this value into Celsius using a simple formula:</p>
 <span class="w">  </span><span class="c1">// (analog value * 5V * 100) / 1024 levels = temperature in Celsius</span>
 <span class="w">  </span><span class="n">temperatureC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">sensorValue</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">5.0</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">100.0</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1024.0</span><span class="p">;</span>
 
-<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Temperature: &quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// Print the label &quot;Temperature: &quot; to the Serial Monitor</span>
-<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">temperatureC</span><span class="p">);</span><span class="w">     </span><span class="c1">// Print the temperature value</span>
-<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot; °C&quot;</span><span class="p">);</span><span class="w">          </span><span class="c1">// Print the °C symbol and move to the next line</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Temperature: &quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Print the label &quot;Temperature: &quot; to the Serial Monitor</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">temperatureC</span><span class="p">);</span><span class="w"> </span><span class="c1">// Print the temperature value</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot; °C&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Print the °C symbol and move to the next line</span>
 
 <span class="w">  </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w"> </span><span class="c1">// Wait 1 second before reading again</span>
 <span class="p">}</span>
